@@ -21,6 +21,7 @@
     "bootstrap": "^5.0.1",
     "chart.js": "^3.3.2",
     "jquery": "^3.6.0",
+    "ng2-charts": "^2.4.2",
     "popper.js": "^1.16.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.1.0",
