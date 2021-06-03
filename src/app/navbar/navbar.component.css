@@ -1,0 +1,18 @@
+.logo{
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.4em;
+    
+}
+
+.logo-left{
+    background-color: purple;
+    padding: 3px 5px 3px 8px;
+    border-radius: 4px;
+}
+
+.logo-right{
+    padding: 3px 8px 3px 3px;
+    margin-left: 5px;
+    border-radius: 4px; 
+}
