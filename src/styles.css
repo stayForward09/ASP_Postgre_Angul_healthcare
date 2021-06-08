@@ -8,17 +8,17 @@ html {
 
 body {
     font-family: 'Source Sans Pro', sans-serif;
-    background-color: #1C2228;
+    background-color: white;
     color: #f7fff7;
     height: 100%;
 }
 
 a {
-    color: #44a4cd;
+    color: black;
 }
 
 a:hover {
-    color: #44a8cf;
+    color: black;
 }
 
 .shadow {
@@ -30,13 +30,14 @@ a:hover {
 }
 
 .card-theme {
-    background-color: #191F26;
-    border: none;
+    background-color: whitesmoke;
+    border: 1px solid black;
     border-radius: 2px;
+    color: black;
 }
 
 .card-heading-theme{
-    color: #eee;
+    color: black;
     border-top-right-radius: 8px;
     border-top-left-radius: 8px;
     padding: 12px;
@@ -51,6 +52,3 @@ a:hover {
     flex-direction: column;
 }
 
-.section-container {
-    padding: 30px;
-}
