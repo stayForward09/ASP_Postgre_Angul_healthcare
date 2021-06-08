@@ -9,7 +9,7 @@ html {
 body {
     font-family: 'Source Sans Pro', sans-serif;
     background-color: white;
-    color: #f7fff7;
+    color: black;
     height: 100%;
 }
 
@@ -30,8 +30,8 @@ a:hover {
 }
 
 .card-theme {
-    background-color: whitesmoke;
-    border: 1px solid black;
+    background-color: white;
+    border: none;
     border-radius: 2px;
     color: black;
 }
@@ -44,7 +44,7 @@ a:hover {
 }
 
 .card-body-theme{
-    background-color: #494F56;
+    background-color: white;
 }
 
 .cards {
@@ -52,3 +52,6 @@ a:hover {
     flex-direction: column;
 }
 
+.section-container {
+    padding: 30px;
+}
