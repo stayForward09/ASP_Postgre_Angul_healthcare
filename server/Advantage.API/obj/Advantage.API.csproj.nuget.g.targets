@@ -5,5 +5,7 @@
   </PropertyGroup>
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <Import Project="$(NuGetPackageRoot)microsoft.extensions.apidescription.server/3.0.0/build/Microsoft.Extensions.ApiDescription.Server.targets" Condition="Exists('$(NuGetPackageRoot)microsoft.extensions.apidescription.server/3.0.0/build/Microsoft.Extensions.ApiDescription.Server.targets')" />
+    <Import Project="$(NuGetPackageRoot)microsoft.visualstudio.web.codegeneration.tools/2.0.4/build/microsoft.visualstudio.web.codegeneration.tools.targets" Condition="Exists('$(NuGetPackageRoot)microsoft.visualstudio.web.codegeneration.tools/2.0.4/build/microsoft.visualstudio.web.codegeneration.tools.targets')" />
+    <Import Project="$(NuGetPackageRoot)microsoft.extensions.configuration.usersecrets/2.0.2/build/netstandard2.0/Microsoft.Extensions.Configuration.UserSecrets.targets" Condition="Exists('$(NuGetPackageRoot)microsoft.extensions.configuration.usersecrets/2.0.2/build/netstandard2.0/Microsoft.Extensions.Configuration.UserSecrets.targets')" />
   </ImportGroup>
 </Project>
