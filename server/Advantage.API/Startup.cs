@@ -16,8 +16,10 @@ namespace Advantage.API
 {
     public class Startup
     {
+        private string _connectionString = null;
         public Startup(IConfiguration configuration)
         {
+
             Configuration = configuration;
         }
 
@@ -27,11 +29,13 @@ namespace Advantage.API
         public void ConfigureServices(IServiceCollection services)
         {
 
+            _connectionString = Configuration["secretConnectionString"];
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Advantage.API", Version = "v1" });
             });
+            services.AddEntityFrameworkNpgsql().AddDbContext<ApiContext>(opt=>opt.UseNpgsql(_connectionString));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

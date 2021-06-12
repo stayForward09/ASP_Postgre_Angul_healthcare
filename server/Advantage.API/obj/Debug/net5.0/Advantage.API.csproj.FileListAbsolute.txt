@@ -1,0 +1,8 @@
+/Users/rixant/Dashboard/server/Advantage.API/obj/Debug/net5.0/Advantage.API.csproj.AssemblyReference.cache
+/Users/rixant/Dashboard/server/Advantage.API/obj/Debug/net5.0/Advantage.API.GeneratedMSBuildEditorConfig.editorconfig
+/Users/rixant/Dashboard/server/Advantage.API/obj/Debug/net5.0/Advantage.API.AssemblyInfoInputs.cache
+/Users/rixant/Dashboard/server/Advantage.API/obj/Debug/net5.0/Advantage.API.AssemblyInfo.cs
+/Users/rixant/Dashboard/server/Advantage.API/obj/Debug/net5.0/Advantage.API.csproj.CoreCompileInputs.cache
+/Users/rixant/Dashboard/server/Advantage.API/obj/Debug/net5.0/Advantage.API.MvcApplicationPartsAssemblyInfo.cs
+/Users/rixant/Dashboard/server/Advantage.API/obj/Debug/net5.0/Advantage.API.MvcApplicationPartsAssemblyInfo.cache
+/Users/rixant/Dashboard/server/Advantage.API/obj/Debug/net5.0/UserSecretsAssemblyInfo.cs
