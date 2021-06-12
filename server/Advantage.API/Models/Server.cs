@@ -1,4 +1,4 @@
-namespace Advantage.API.Models
+namespace Advantage.API
 {
     public class Server
     {

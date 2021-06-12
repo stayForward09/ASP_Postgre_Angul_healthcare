@@ -1,4 +1,6 @@
-namespace Advantage.API.Models
+using System; 
+
+namespace Advantage.API
 {
     public class Order
     {
