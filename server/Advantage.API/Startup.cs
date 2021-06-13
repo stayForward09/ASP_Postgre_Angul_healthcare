@@ -31,6 +31,11 @@ namespace Advantage.API
         public void ConfigureServices(IServiceCollection services)
         {
 
+            services.AddCors(opt => {
+                opt.AddPolicy("CorsPolicy",
+                c => c.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+            });
+
             _connectionString = Configuration["secretConnectionString"];
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -49,6 +54,7 @@ namespace Advantage.API
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseCors("CorsPolicy");
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Advantage.API v1"));
             }
