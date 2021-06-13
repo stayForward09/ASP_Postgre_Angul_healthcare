@@ -26,8 +26,12 @@
     </table>
 
     <app-pagination 
+    (goPage)="goToPage($event)"
     (goPrev)="goToPrevious()"
     (onNext)="goToNext()"
+    [page]="page"
+    [perPage]="page"
+    [count]="total"
     >
     </app-pagination>
 </div>

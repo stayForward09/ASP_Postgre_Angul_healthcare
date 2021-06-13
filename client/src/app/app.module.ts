@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import {RouterModule} from '@angular/router';
 
 import {appRoutes} from '../routes';
+import { HttpModule } from '@angular/http';
 import {ChartsModule} from 'ng2-charts';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -17,6 +18,8 @@ import { LineChartComponent } from './charts/line-chart/line-chart.component';
 import { PieChartComponent } from './charts/pie-chart/pie-chart.component';
 import { ServerComponent } from './server/server.component';
 import { PaginationComponent } from './pagination/pagination.component';
+// Services
+import { SalesDataService } from './services/sales-data.service';
 
 
 @NgModule({
@@ -36,9 +39,12 @@ import { PaginationComponent } from './pagination/pagination.component';
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
-    ChartsModule
+    ChartsModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [
+    SalesDataService
+  ],
   bootstrap: [AppComponent]
 })
 
