@@ -38,7 +38,7 @@ export class ServerService {
   }
 
   handleServerMessage(msg: ServerMessage): Observable<Response> {
-    const url = 'http://localhost:5001/api/server/' + msg.id;
+    const url = 'http://localhost:5000/api/server/' + msg.id;
     return this._http.put(url, msg, this.options).map(res => res.json());
   }
 

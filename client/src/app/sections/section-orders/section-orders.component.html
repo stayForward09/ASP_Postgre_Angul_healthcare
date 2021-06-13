@@ -19,7 +19,7 @@
                 <td>{{order.customer.name}}</td>
                 <td>{{order.total}}</td>
                 <td>{{order.placed | date: 'short'}}</td>
-                <td>{{order.fulfilled | date: 'short'}}</td>
+                <td>{{order.fulfilled| date: 'short'}}</td>
                 <td>Status</td>
             </tr>
         </tbody>
@@ -28,7 +28,7 @@
     <app-pagination 
     (goPage)="goToPage($event)"
     (goPrev)="goToPrevious()"
-    (onNext)="goToNext()"
+    (goNext)="goToNext()"
     [page]="page"
     [perPage]="page"
     [count]="total"

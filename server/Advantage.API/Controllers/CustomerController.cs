@@ -7,7 +7,7 @@ using Microsoft.Extensions.Logging;
 
 namespace Advantage.API.Controllers
 {
-    
+
     [Route("api/[controller]")]
     public class CustomerController : Controller
     {
@@ -16,6 +16,15 @@ namespace Advantage.API.Controllers
         public CustomerController(ApiContext ctx)
         {
             _ctx = ctx;
+        }
+
+
+        [HttpGet]
+        public IActionResult Get()
+        {
+            var data = _ctx.Customers.OrderBy(c => c.Id);
+
+            return Ok(data);
         }
 
         // GET api/customer/pageNumber/pageSize
@@ -39,9 +48,10 @@ namespace Advantage.API.Controllers
 
         // GET api/values/5
         [HttpGet("{id}", Name = "GetCustomer")]
-        public Customer Get(int id)
+        public IActionResult Get(int id)
         {
-            return _ctx.Customers.Find(id);
+            var customer = _ctx.Customers.Find(id);
+            return Ok(customer);
         }
 
         // POST api/values

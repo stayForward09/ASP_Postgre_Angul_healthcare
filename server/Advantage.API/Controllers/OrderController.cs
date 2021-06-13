@@ -6,9 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
-namespace Advantage.API.Controllers
+namespace Advantage.API.Demo.Controllers
 {
-    
     [Route("api/[controller]")]
     public class OrderController : Controller
     {
@@ -18,6 +17,16 @@ namespace Advantage.API.Controllers
         {
             _ctx = ctx;
         }
+
+
+         [HttpGet]
+        public IActionResult Get()
+        {
+            var data = _ctx.Orders.OrderBy(c => c.Id);
+
+            return Ok(data);
+        }
+
 
         // GET api/order/pageNumber/pageSize
         [HttpGet("{pageIndex:int}/{pageSize:int}")]
