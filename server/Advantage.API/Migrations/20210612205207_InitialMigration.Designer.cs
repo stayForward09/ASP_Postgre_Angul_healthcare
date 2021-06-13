@@ -29,13 +29,13 @@ namespace Advantage.API.Migrations
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
                     b.Property<int>("Email")
-                        .HasColumnType("integer");
+                        .HasColumnType("character varying");
 
                     b.Property<int>("Name")
-                        .HasColumnType("integer");
+                        .HasColumnType("character varying");
 
                     b.Property<int>("State")
-                        .HasColumnType("integer");
+                        .HasColumnType("character varying");
 
                     b.HasKey("Id");
 
@@ -79,7 +79,7 @@ namespace Advantage.API.Migrations
                         .HasColumnType("boolean");
 
                     b.Property<int>("Name")
-                        .HasColumnType("integer");
+                        .HasColumnType("character varying");
 
                     b.HasKey("Id");
 

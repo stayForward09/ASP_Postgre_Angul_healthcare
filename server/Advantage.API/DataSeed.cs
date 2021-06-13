@@ -25,7 +25,7 @@ namespace Advantage.API
 
             if (!_ctx.Orders.Any())
             {
-                SeedOrders(nCustomers); 
+                SeedOrders(nOrders); 
                 _ctx.SaveChanges();
             }
 
@@ -159,13 +159,14 @@ namespace Advantage.API
 
             for(var i = 1; i <= nOrders; i++)
             {
-                var randCustomerId = rand.Next(_ctx.Customers.Count());
+                var randCustomerId = rand.Next(1,_ctx.Customers.Count());
                 var placed = Helpers.GetRandomOrderPlaced();
                 var completed = Helpers.GetRandomOrderCompleted(placed);
+                var customers = _ctx.Customers.ToList();
 
                 orders.Add(new Order{
                     Id = i,
-                    Customer = _ctx.Customers.First(c => c.Id == randCustomerId),
+                    Customer = customers.First(c => c.Id == randCustomerId),
                     Total = Helpers.GetRandomOrderTotal(),
                     Placed = placed,
                     Completed = completed

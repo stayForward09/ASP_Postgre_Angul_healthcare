@@ -1,11 +1,3 @@
-/Users/rixant/Dashboard/server/Advantage.API/obj/Debug/net5.0/Advantage.API.csproj.AssemblyReference.cache
-/Users/rixant/Dashboard/server/Advantage.API/obj/Debug/net5.0/Advantage.API.GeneratedMSBuildEditorConfig.editorconfig
-/Users/rixant/Dashboard/server/Advantage.API/obj/Debug/net5.0/Advantage.API.AssemblyInfoInputs.cache
-/Users/rixant/Dashboard/server/Advantage.API/obj/Debug/net5.0/Advantage.API.AssemblyInfo.cs
-/Users/rixant/Dashboard/server/Advantage.API/obj/Debug/net5.0/Advantage.API.csproj.CoreCompileInputs.cache
-/Users/rixant/Dashboard/server/Advantage.API/obj/Debug/net5.0/Advantage.API.MvcApplicationPartsAssemblyInfo.cs
-/Users/rixant/Dashboard/server/Advantage.API/obj/Debug/net5.0/Advantage.API.MvcApplicationPartsAssemblyInfo.cache
-/Users/rixant/Dashboard/server/Advantage.API/obj/Debug/net5.0/UserSecretsAssemblyInfo.cs
 /Users/rixant/Dashboard/server/Advantage.API/bin/Debug/net5.0/appsettings.Development.json
 /Users/rixant/Dashboard/server/Advantage.API/bin/Debug/net5.0/appsettings.json
 /Users/rixant/Dashboard/server/Advantage.API/bin/Debug/net5.0/Advantage.API.deps.json
@@ -38,6 +30,14 @@
 /Users/rixant/Dashboard/server/Advantage.API/bin/Debug/net5.0/Swashbuckle.AspNetCore.SwaggerUI.dll
 /Users/rixant/Dashboard/server/Advantage.API/bin/Debug/net5.0/System.Diagnostics.DiagnosticSource.dll
 /Users/rixant/Dashboard/server/Advantage.API/bin/Debug/net5.0/System.Xml.XPath.XmlDocument.dll
+/Users/rixant/Dashboard/server/Advantage.API/obj/Debug/net5.0/Advantage.API.csproj.AssemblyReference.cache
+/Users/rixant/Dashboard/server/Advantage.API/obj/Debug/net5.0/Advantage.API.GeneratedMSBuildEditorConfig.editorconfig
+/Users/rixant/Dashboard/server/Advantage.API/obj/Debug/net5.0/Advantage.API.AssemblyInfoInputs.cache
+/Users/rixant/Dashboard/server/Advantage.API/obj/Debug/net5.0/Advantage.API.AssemblyInfo.cs
+/Users/rixant/Dashboard/server/Advantage.API/obj/Debug/net5.0/Advantage.API.csproj.CoreCompileInputs.cache
+/Users/rixant/Dashboard/server/Advantage.API/obj/Debug/net5.0/Advantage.API.MvcApplicationPartsAssemblyInfo.cs
+/Users/rixant/Dashboard/server/Advantage.API/obj/Debug/net5.0/Advantage.API.MvcApplicationPartsAssemblyInfo.cache
+/Users/rixant/Dashboard/server/Advantage.API/obj/Debug/net5.0/UserSecretsAssemblyInfo.cs
 /Users/rixant/Dashboard/server/Advantage.API/obj/Debug/net5.0/staticwebassets/Advantage.API.StaticWebAssets.Manifest.cache
 /Users/rixant/Dashboard/server/Advantage.API/obj/Debug/net5.0/staticwebassets/Advantage.API.StaticWebAssets.xml
 /Users/rixant/Dashboard/server/Advantage.API/obj/Debug/net5.0/scopedcss/bundle/Advantage.API.styles.css
