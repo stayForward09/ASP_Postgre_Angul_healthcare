@@ -22,6 +22,7 @@ The dashboard is used to visualize the statistical data of sales, keep the track
 ## Pre-requisites
 1. Visual Studio Code
 2. .NET SDK 
+3. pgAdmin4
 
 ## Cloning Respository
 ```
