@@ -6,7 +6,7 @@ The dashboard is used to visualize the statistical data of sales, keep the track
 
 ## Demo
 <p float="center">
-    <img src="https://github.com/Rixant/Dashboard/blob/4e1be3416ca8e26a8a9981a8af660f42b97503ba/client/demo/dash.gif" alt="Demo showcase gif" title="App Demo"  width="50%" height="50%"/> 
+    <img src="https://github.com/Rixant/Dashboard/blob/4e1be3416ca8e26a8a9981a8af660f42b97503ba/client/demo/dash.gif" alt="Demo showcase gif" title="App Demo"  width="80%" height="80%"/> 
  </p>
 
 ## Languges Used
