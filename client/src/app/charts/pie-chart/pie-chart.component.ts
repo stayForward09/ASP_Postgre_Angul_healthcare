@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
+import _ from 'lodash';
 
 import {ChartType} from 'chart.js';
 import { SingleDataSet } from 'ng2-charts';
@@ -12,19 +13,30 @@ export class PieChartComponent implements OnInit {
 
   constructor() { }
 
-  pieChartData: SingleDataSet = [350, 450, 120];
-  pieChartLabels: string[] = ['A', 'B', 'C'];
-  pieCharttype: ChartType = 'pie';
+  @Input() inputData: any;
+  @Input() limit !: number;
+
+
+
+  pieChartData: number[] = [350, 450, 120]
+  pieChartLabels: string[] = ['XY', 'B', 'C'];
   colors: any[] = [
     {
-      backgroundColor: ['#26547c', '#ff6b6b', '#ffd166']
+      backgroundColor: ['#26547c', '#ff6b6b', '#ffd166'],
+      borderColor: '#111'
     }
   ];
+  pieChartType: ChartType= 'doughnut';
 
-  pieChartType: ChartType= 'pie';
 
+  ngOnInit(){
+    this.parseChartData(this.inputData, this.limit);
+  }
 
-  ngOnInit(): void {
+  parseChartData(res: any, limit?: number) {
+    const allData = res.slice(0, limit);
+    this.pieChartData = allData.map(x => x[Object.keys(x)[1]]);
+    this.pieChartLabels = allData.map(x => x[Object.keys(x)[0]]);
   }
 
 }
