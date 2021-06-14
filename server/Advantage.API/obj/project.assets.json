@@ -8189,11 +8189,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/rixant/Dashboard/server/Advantage.API/Advantage.API.csproj",
+      "projectUniqueName": "/Users/rixant/My Repositories/Dashboard/server/Advantage.API/Advantage.API.csproj",
       "projectName": "Advantage.API",
-      "projectPath": "/Users/rixant/Dashboard/server/Advantage.API/Advantage.API.csproj",
+      "projectPath": "/Users/rixant/My Repositories/Dashboard/server/Advantage.API/Advantage.API.csproj",
       "packagesPath": "/Users/rixant/.nuget/packages/",
-      "outputPath": "/Users/rixant/Dashboard/server/Advantage.API/obj/",
+      "outputPath": "/Users/rixant/My Repositories/Dashboard/server/Advantage.API/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/rixant/.nuget/NuGet/NuGet.Config"

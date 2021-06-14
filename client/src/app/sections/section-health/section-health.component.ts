@@ -36,7 +36,6 @@ export class SectionHealthComponent implements OnInit, OnDestroy {
 
   refreshData() {
     this._serverService.getServers().subscribe(res => {
-      console.log(res);
       this.servers = res;
     });
 

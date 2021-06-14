@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, RequestOptions, Response, Headers } from '@angular/http';
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs/Observable';
 import { ServerMessage } from '../shared/server-message';
-import {map} from 'rxjs/operators';
 import { Server } from '../shared/server';
 import 'rxjs/add/operator/catch';
 
