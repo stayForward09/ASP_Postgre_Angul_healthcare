@@ -1,8 +1,7 @@
 import { Component, OnInit, Input} from '@angular/core';
-import _ from 'lodash';
 
 import {ChartType} from 'chart.js';
-import { SingleDataSet } from 'ng2-charts';
+
 
 @Component({
   selector: 'app-pie-chart',
@@ -18,8 +17,8 @@ export class PieChartComponent implements OnInit {
 
 
 
-  pieChartData: number[] = [350, 450, 120]
-  pieChartLabels: string[] = ['XY', 'B', 'C'];
+  pieChartData: number[];
+  pieChartLabels: string[];
   colors: any[] = [
     {
       backgroundColor: ['#26547c', '#ff6b6b', '#ffd166'],

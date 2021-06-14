@@ -1,6 +1,7 @@
 <div class="chart">
     <canvas baseChart
-    style="width:100%; height:100%;"
+    *ngIf='lineChartData'
+    style="width:100%; height: 20%;"
     [datasets]="lineChartData"
     [labels]="lineChartLabels"
     [options]="lineChartOptions"
