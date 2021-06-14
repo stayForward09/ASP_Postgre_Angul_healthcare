@@ -37,7 +37,7 @@ cd Advantage.API
 dotnet build
 dotnet run
 ```
-The server starts running on: https://localhost:5001
+The server starts running on: https://localhost:5000
 
 2. Client Side
 ```
