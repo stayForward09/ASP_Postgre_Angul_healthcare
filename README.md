@@ -29,6 +29,31 @@ The dashboard is used to visualize the statistical data of sales, keep the track
 git clone git@github.com:Rixant/Dashboard.git
 cd Dashboard
 ```
+<<<<<<< HEAD
+=======
+
+## Installation
+1. Server Side
+```
+cd server
+cd Advantage.API
+dotnet build
+dotnet run
+```
+The server starts running on: https://localhost:5000
+
+2. Client Side
+```
+cd client
+npm install
+ng serve
+```
+The web application starts running on: https://localhost:4200
+
+
+
+
+>>>>>>> dc1764ba9d7652dba3c17d1810448cccb51bcbc1
 
 ## Installation
 1. Server Side
