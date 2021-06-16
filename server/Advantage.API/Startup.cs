@@ -1,17 +1,9 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
-using Advantage.API;
 using Microsoft.OpenApi.Models;
 
 namespace Advantage.API
@@ -19,13 +11,20 @@ namespace Advantage.API
     public class Startup
     {
         private string _connectionString = null;
+
+
+        //constructor
         public Startup(IConfiguration configuration)
         {
-
             Configuration = configuration;
-        }
+        }//end constructor
+
+
 
         public IConfiguration Configuration { get; }
+
+
+
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -37,16 +36,21 @@ namespace Advantage.API
             });
 
             _connectionString = Configuration["secretConnectionString"];
+
             services.AddControllers();
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Advantage.API", Version = "v1" });
             });
+
             services.AddEntityFrameworkNpgsql().AddDbContext<ApiContext>(opt=>opt.UseNpgsql(_connectionString));
 
-
             services.AddTransient<DataSeed>();
-        }
+
+        }//end ConfigureServices
+
+
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, DataSeed seed)
@@ -73,8 +77,10 @@ namespace Advantage.API
                    endpoints.MapControllerRoute(
                 name: "default",
                 pattern: "api/{controller}/{action}/{id?}");
-
             });
-        }
-    }
-}
+
+        }//end Configure
+
+    }//end class
+
+}//end namespace

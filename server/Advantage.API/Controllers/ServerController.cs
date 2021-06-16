@@ -1,21 +1,23 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
+
 
 namespace Advantage.API.Controllers
 {
+
     [Route("api/[controller]")]
     public class ServerController : Controller
     {
         private readonly ApiContext _ctx;
 
+        //constructor
         public ServerController(ApiContext ctx)
         {
             _ctx = ctx;
         }
+
+
 
         // GET api/server
         [HttpGet]
@@ -23,14 +25,18 @@ namespace Advantage.API.Controllers
         {
             var response = _ctx.Servers.OrderBy(s=>s.Id).ToList(); 
             return Ok(response);
-        }
+        }//end get servers
+
+
 
         // GET api/server/5
         [HttpGet("{id}", Name ="GetServer")]
         public Server Get(int id)
         {
             return _ctx.Servers.Find(id);
-        }
+        }//end get server by id
+
+
 
         // POST api/server
         [HttpPost]
@@ -45,8 +51,11 @@ namespace Advantage.API.Controllers
             _ctx.SaveChanges();
 
             return CreatedAtRoute("GetServer", new { id = server.Id }, server);
-        }
+        }//end post server
 
+
+
+        //PUT Server API 
         [HttpPut("{id}")]
         public IActionResult Message(int id, [FromBody] ServerMessage msg)
         {
@@ -72,7 +81,9 @@ namespace Advantage.API.Controllers
             }
 
             return new NoContentResult();
-        }
+        }//end put server
+
+
 
         // DELETE api/server/5
         [HttpDelete("{id}")]
@@ -87,6 +98,9 @@ namespace Advantage.API.Controllers
             _ctx.Servers.Remove(server);
             _ctx.SaveChanges();
             return new NoContentResult();
-        }
-    }
-}
+        }//end delete server
+
+
+    }//end class
+
+}//end namespace

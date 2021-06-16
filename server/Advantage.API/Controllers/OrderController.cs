@@ -1,31 +1,37 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
+
 
 namespace Advantage.API.Demo.Controllers
 {
+
     [Route("api/[controller]")]
     public class OrderController : Controller
     {
         private readonly ApiContext _ctx;
 
+
+        // constructor
         public OrderController(ApiContext ctx)
         {
             _ctx = ctx;
         }
 
 
-         [HttpGet]
+
+        //GET Orders API
+        [HttpGet]
         public IActionResult Get()
         {
+
             var data = _ctx.Orders.OrderBy(c => c.Id);
 
             return Ok(data);
-        }
+
+        }//end GET
+
 
 
         // GET api/order/pageNumber/pageSize
@@ -45,8 +51,11 @@ namespace Advantage.API.Demo.Controllers
             };
 
             return Ok(response);
-        }
+        }//end get by pagesize
 
+
+
+        //Get orders by state
         [HttpGet("bystate")]
         public IActionResult ByState()
         {
@@ -65,8 +74,12 @@ namespace Advantage.API.Demo.Controllers
                 .ToList();
 
             return Ok(groupedResult);
-        }
 
+        }//end get by state
+
+
+
+        //GET orders by customer size
         [HttpGet("bycustomer/{n}")]
         public IActionResult ByCustomer(int n)
         {
@@ -86,7 +99,9 @@ namespace Advantage.API.Demo.Controllers
                 .ToList();
 
             return Ok(groupedResult);
-        }
+        }//get get by customerSize
+
+
 
         // GET api/order/5
         [HttpGet("getorder/{id}", Name ="GetOrder")]
@@ -94,12 +109,15 @@ namespace Advantage.API.Demo.Controllers
         {
             return _ctx.Orders.Include(o => o.Customer)
                 .First(o => o.Id == id);
-        }
+        }//end get order by id
+
+
 
         // POST api/order
         [HttpPost]
         public IActionResult Post([FromBody] Order order)
         {
+            //if null order
             if (order == null)
             {
                 return BadRequest();
@@ -109,7 +127,9 @@ namespace Advantage.API.Demo.Controllers
             _ctx.SaveChanges();
 
             return CreatedAtRoute("GetOrder", new { id = order.Id }, order);
-        }
+        }//end post
+
+
 
         // PUT api/order/5
         [HttpPut("{id}")]
@@ -118,14 +138,14 @@ namespace Advantage.API.Demo.Controllers
             if (order == null || order.Id != id)
             {
                 return BadRequest();
-            }
+            }//end if
 
             var updatedOrder = _ctx.Orders.FirstOrDefault(c => c.Id == id);
 
             if (updatedOrder == null)
             {
                 return NotFound();
-            }
+            }//end if
 
             updatedOrder.Customer = order.Customer;
             updatedOrder.Completed = order.Completed;
@@ -135,6 +155,9 @@ namespace Advantage.API.Demo.Controllers
             _ctx.SaveChanges();
             return new NoContentResult();
         }
+        //end put order
+
+
 
         // DELETE api/order/5
         [HttpDelete("{id}")]
@@ -149,6 +172,9 @@ namespace Advantage.API.Demo.Controllers
             _ctx.Orders.Remove(order);
             _ctx.SaveChanges();
             return new NoContentResult();
-        }
-    }
-}
+        }//end delete order by id
+
+
+    }//end class
+
+}//end namespace

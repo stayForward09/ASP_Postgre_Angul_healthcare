@@ -1,6 +1,8 @@
 <div class="section-container">
     <div class="row-fluid cards">
         <div class="card-deck">
+
+            <!-- Daily Orders Card -->
             <div class="card mb-3 shadow card-theme">
                 <div class="card-header card-header-theme">
                     <h5> Daily Orders</h5>
@@ -9,9 +11,9 @@
                     <app-bar-chart></app-bar-chart>
                 </div>
             </div>
-
+            <!-- End Daily Card -->
             
-
+            <!-- Orders By Customers Card -->
             <div class="card mb-3 shadow card-theme">
                 <div class="card-header card-header-theme">
                     <h5>Orders by Customers</h5>
@@ -20,7 +22,9 @@
                     <app-pie-chart *ngIf='salesDataByCustomer' [inputData]='salesDataByCustomer' [limit]='3'></app-pie-chart>
                 </div>
             </div>
+            <!-- END Customers Card -->
 
+            <!-- Orders By State -->
             <div class="card mb-3 shadow card-theme">
                 <div class="card-header card-header-theme">
                     <h5>Orders by State</h5>
@@ -29,9 +33,11 @@
                     <app-pie-chart *ngIf='salesDataByState' [inputData]='salesDataByState' [limit]='5'></app-pie-chart>
                 </div>
             </div>
+            <!-- END States Card -->
 
         </div>
     </div>
+
     <div class="row-fluid cards">
         <div class="card shadow card-theme card-bottom">
             <div class="card-header card-header-theme">
@@ -42,4 +48,5 @@
             </div>
         </div>
     </div>
+
 </div>

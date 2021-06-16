@@ -1,9 +1,7 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
+
 
 namespace Advantage.API.Controllers
 {
@@ -19,13 +17,17 @@ namespace Advantage.API.Controllers
         }
 
 
+
+        // GET API
         [HttpGet]
         public IActionResult Get()
         {
             var data = _ctx.Customers.OrderBy(c => c.Id);
 
             return Ok(data);
-        }
+        }//end GET
+
+
 
         // GET api/customer/pageNumber/pageSize
         [HttpGet("{pageIndex:int}/{pageSize:int}")]
@@ -33,7 +35,6 @@ namespace Advantage.API.Controllers
         {
             var data = _ctx.Customers.OrderBy(c => c.Id);
             var page = new PaginatedResponse<Customer>(data, pageIndex, pageSize);
-
             var totalCount = data.Count();
             var totalPages = Math.Ceiling((double)totalCount / pageSize);
 
@@ -44,7 +45,9 @@ namespace Advantage.API.Controllers
             };
 
             return Ok(response);
-        }
+        }//end get by pagesize
+
+
 
         // GET api/values/5
         [HttpGet("{id}", Name = "GetCustomer")]
@@ -52,7 +55,9 @@ namespace Advantage.API.Controllers
         {
             var customer = _ctx.Customers.Find(id);
             return Ok(customer);
-        }
+        }//end get by size
+
+
 
         // POST api/values
         [HttpPost]
@@ -67,7 +72,9 @@ namespace Advantage.API.Controllers
             _ctx.SaveChanges();
 
             return CreatedAtRoute("GetCustomer", new { id = customer.Id }, customer);
-        }
+        }//end post
+
+
 
         // PUT api/values/5
         [HttpPut("{id}")]
@@ -91,7 +98,10 @@ namespace Advantage.API.Controllers
 
             _ctx.SaveChanges();
             return new NoContentResult();
-        }
+        }//end put
+
+
+
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
@@ -106,6 +116,10 @@ namespace Advantage.API.Controllers
             _ctx.Customers.Remove(customer);
             _ctx.SaveChanges();
             return new NoContentResult();
-        }
-    }
-}
+        }//end delete
+
+
+
+    }//end class
+
+}//end namespace

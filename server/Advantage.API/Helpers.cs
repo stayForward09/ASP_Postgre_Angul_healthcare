@@ -9,11 +9,16 @@ namespace Advantage.API
     {
         private static Random _rand = new Random();
 
+
+        // get random items
         internal static string GetRandom(IList<string> items)
         {
             return items[_rand.Next(items.Count)];
-        }
+        }//end GetRandom
 
+
+
+        // generate unique customer nae
         internal static string MakeUniqueCustomerName(List<string> names)
         {
             var maxNames = bizPrefix.Count + bizSuffix.Count;
@@ -32,13 +37,19 @@ namespace Advantage.API
                 
             }
             return bizName;
-        }
+        }//end MakeUniqueCustomerName
 
+
+
+        // generate customer email
         internal static string MakeCustomerEmail(string name)
         {
             return $"contact@{name.ToLower()}.com";
-        }
+        }//end MakeCustomerEmail
 
+
+
+        // list of states
         internal static readonly List<string> useStates = new List<string>()
         {
             "AK", "AL","AZ",  "AR", "CA", "CO", "CT", "DE", "FL", "GA",
@@ -48,6 +59,9 @@ namespace Advantage.API
             "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"
         };
 
+
+
+        // list of prefix
         private static readonly List<string> bizPrefix = new List<string>()
         {
             "ABC",
@@ -61,19 +75,11 @@ namespace Advantage.API
             "Forward",
             "Enterprise",
             "Sales"
-        };
+        };//end prefix
 
-        internal static DateTime GetRandomOrderPlaced()
-        {
-            var end = DateTime.Now;
-            var start = end.AddDays(-90);
 
-            TimeSpan possibleSpan = end - start;
-            TimeSpan newSpan = new TimeSpan(0, _rand.Next(0, (int)possibleSpan.TotalMinutes), 0);
 
-            return start + newSpan;
-        }
-
+        // list of suffix
         private static readonly List<string> bizSuffix = new List<string>()
         {
             "Co",
@@ -88,8 +94,25 @@ namespace Advantage.API
             "Storage",
             "Transit",
             "Logistics"
-        };
+        };//end suffix
 
+
+
+        // generate random datetime for placed
+        internal static DateTime GetRandomOrderPlaced()
+        {
+            var end = DateTime.Now;
+            var start = end.AddDays(-90);
+
+            TimeSpan possibleSpan = end - start;
+            TimeSpan newSpan = new TimeSpan(0, _rand.Next(0, (int)possibleSpan.TotalMinutes), 0);
+
+            return start + newSpan;
+        }//end GetRandomOrderPlaced
+
+
+
+        // generate random datetime for completed
         public static DateTime? GetRandomOrderCompleted(DateTime placed)
         {
             var now = DateTime.Now;
@@ -102,26 +125,34 @@ namespace Advantage.API
             }
 
             return placed.AddHours(_rand.Next(10, 90));
-        }
+        }//end GetRandomOrderCompleted
 
+
+
+        // select random customers
         public static Customer GetRandomCustomer(ApiContext ctx)
         {
             var randomId = _rand.Next(1, ctx.Customers.Count());
             return ctx.Customers.First(c => c.Id == randomId);
-        }
+        }//end GetRandomCustomer
 
 
+
+        // generate random Total
         public static decimal GetRandomOrderTotal()
         {
             return _rand.Next(100, 1000);
-        }
+        }// end GetRandomOrderTotal
 
 
+
+        // select random state
         public static string GetRandomState()
         {
             return GetRandom(useStates);
-        }
+        }//end GetRandomState
 
 
-    }
-}
+    }//end class
+
+}//end namespace

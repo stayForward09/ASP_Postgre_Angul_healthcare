@@ -1,5 +1,4 @@
 import { Component, OnInit, Input} from '@angular/core';
-
 import {ChartType} from 'chart.js';
 
 
@@ -8,13 +7,15 @@ import {ChartType} from 'chart.js';
   templateUrl: './pie-chart.component.html',
   styleUrls: ['./pie-chart.component.css']
 })
+
+
+//class
 export class PieChartComponent implements OnInit {
 
   constructor() { }
 
   @Input() inputData: any;
   @Input() limit !: number;
-
 
 
   pieChartData: number[];
@@ -28,14 +29,17 @@ export class PieChartComponent implements OnInit {
   pieChartType: ChartType= 'doughnut';
 
 
+  // Init
   ngOnInit(){
     this.parseChartData(this.inputData, this.limit);
-  }
+  }//end Init
 
+
+  // retrieve Chart Data
   parseChartData(res: any, limit?: number) {
     const allData = res.slice(0, limit);
     this.pieChartData = allData.map(x => x[Object.keys(x)[1]]);
     this.pieChartLabels = allData.map(x => x[Object.keys(x)[0]]);
-  }
+  }//end parseChartData
 
 }

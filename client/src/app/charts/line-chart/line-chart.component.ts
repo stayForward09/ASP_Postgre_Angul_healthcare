@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
 import { SalesDataService } from '../../services/sales-data.service';
 import {ChartType} from 'chart.js';
-
 import * as moment from 'moment';
 
 
@@ -11,6 +9,10 @@ import * as moment from 'moment';
   templateUrl: './line-chart.component.html',
   styleUrls: ['./line-chart.component.css']
 })
+
+
+
+//class
 export class LineChartComponent implements OnInit {
 
   constructor(private _salesDataService: SalesDataService) { }
@@ -27,18 +29,22 @@ export class LineChartComponent implements OnInit {
   lineChartLegend = true;
   lineChartType: ChartType = 'line';
   
-
+// Init
   ngOnInit() {
+
     this._salesDataService.getOrders(1, 100).subscribe(res => {
       this.allOrders = res['page']['data'];
+
 
       this._salesDataService.getOrdersByCustomer(3).subscribe(cus => {
         this.topCustomers = cus.map(x => x['name']);
 
+
         const allChartData = this.topCustomers.reduce((result, i) => {
           result.push(this.getChartData(this.allOrders, i));
-          return result;
+            return result;
         }, []);
+
 
         let dates = allChartData.map(x => x['data']).reduce((a, i) => {
           a.push(i.map(o => new Date(o[0])));
@@ -58,10 +64,15 @@ export class LineChartComponent implements OnInit {
           { 'data': r[2].orders.map(x => x.total), 'label': r[2]['customer']}
         ];
 
-      });
-    });
-  }
+      });//end getOrdersByCustomers
 
+    });//end GetOrders
+
+  }//end Init
+
+
+
+  // retrieve Chart Data
   getChartData(allOrders: any, name: string) {
     const customerOrders = allOrders.filter(o => o.customer.name === name);
 
@@ -75,8 +86,11 @@ export class LineChartComponent implements OnInit {
     const result = { customer: name , data: formattedOrders };
 
     return result;
-  }
+  }//end getChartData
 
+
+
+  // retrive orders by data
   getCustomerOrdersByDate(orders: any, dates: any) {
 
     const customers = this.topCustomers;
@@ -104,12 +118,16 @@ export class LineChartComponent implements OnInit {
     }, []);
 
     return result;
-  }
+  }//end getCustomersByDate
 
+
+
+  // format Date
   toFriendlyDate(date: Date) {
     return moment(date).endOf('day').format('YY-MM-DD');
   }
 
+  // getCustomerDateTotal
   getCustomerDateTotal(date: any, customer: string) {
     const r = this.allOrders.filter(o => o.customer.name === customer
       && this.toFriendlyDate(o.placed) === date);
@@ -119,5 +137,7 @@ export class LineChartComponent implements OnInit {
     }, 0);
 
     return result;
-  }
-}
+  }//end getCustomerDateTotal
+
+
+}//end class

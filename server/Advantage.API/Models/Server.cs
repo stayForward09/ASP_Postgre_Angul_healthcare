@@ -1,5 +1,7 @@
 namespace Advantage.API
 {
+
+    // Server Schema
     public class Server
     {
         public int Id { get; set;}

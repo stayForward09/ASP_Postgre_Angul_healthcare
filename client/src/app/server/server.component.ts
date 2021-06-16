@@ -7,6 +7,9 @@ import { Server } from '../shared/server';
   templateUrl: './server.component.html',
   styleUrls: ['./server.component.css']
 })
+
+
+//c;ass
 export class ServerComponent implements OnInit {
 
   constructor() { }
@@ -19,10 +22,13 @@ export class ServerComponent implements OnInit {
   @Input() serverInput !: Server;
   @Output() serverAction = new EventEmitter<ServerMessage>();
 
+
   ngOnInit() {
     this.setServerStatus(this.serverInput.isOnline);
   }
 
+
+  // set status of servers
   setServerStatus(isOnline: boolean) {
     if (isOnline) {
       this.serverInput.isOnline = true;
@@ -35,33 +41,43 @@ export class ServerComponent implements OnInit {
       this.color = '#FF6B6B';
       this.buttonText = 'Start';
     }
-  }
+  }//end setServerStatus
 
+
+  // server while laoding
   makeLoading() {
     this.color = '#FFCA28';
     this.buttonText = 'Pending...';
     this.isLoading = true;
     this.serverStatus = 'Loading';
-  }
+  }//end makeLoading
 
+
+  // send Server Action
   sendServerAction(isOnline: boolean) {
     console.log('sendServerAction called!');
     this.makeLoading();
     const payload = this.buildPayload(isOnline);
     this.serverAction.emit(payload);
-  }
+  }//end sendServerAction
 
+
+  // build pay load
   buildPayload(isOnline: boolean): ServerMessage {
     if (isOnline) {
       return {
         id: this.serverInput.id,
         payload: 'deactivate'
       };
-    } else {
+    } 
+    else {
       return {
         id: this.serverInput.id,
         payload: 'activate'
       };
-    }
-  }
-}
+    }//end ifelse
+
+  }//end buildPayLoad
+
+
+}//end class

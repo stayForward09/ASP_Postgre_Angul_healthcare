@@ -8,7 +8,6 @@ import 'rxjs/add/operator/catch';
 @Injectable()
 export class ServerService {
 
-  // https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.4
 
   constructor(private _http: Http) {
     this.headers = new Headers({

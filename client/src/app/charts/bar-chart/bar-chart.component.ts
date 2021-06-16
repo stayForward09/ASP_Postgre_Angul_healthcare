@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ChartOptions, ChartType, ChartDataSets } from 'chart.js';
+import {ChartType} from 'chart.js';
 import {SalesDataService} from '../../services/sales-data.service';
 import * as moment from 'moment';
 
@@ -10,15 +10,20 @@ import * as moment from 'moment';
   templateUrl: './bar-chart.component.html',
   styleUrls: ['./bar-chart.component.css']
 })
+
+
+//class
 export class BarChartComponent implements OnInit {
 
   constructor(private _salesDataService: SalesDataService) { }
+
 
   orders: any;
   orderLabels: string[];
   orderData: number[];
 
 
+  // components of charts
   public barChartData: any[] ;
   public barChartLabels: string[];
   public barChartLegend = true;
@@ -30,6 +35,7 @@ export class BarChartComponent implements OnInit {
 
 
 
+  // Init
   ngOnInit() {
     this._salesDataService.getOrders(1, 100)
     .subscribe(res => {
@@ -37,9 +43,13 @@ export class BarChartComponent implements OnInit {
       this.barChartLabels = localChartData.map(x => x[0]).reverse();
       this.barChartData = [{'data': localChartData.map(x => x[1]), 'label': 'Sales'}];
     });
-  }
+  }//end Init
 
+
+
+  // retrive chart data
   getChartData(res: Response){
+
     this.orders = res['page']['data'];
     const data = this.orders.map(o => o.total);
    
@@ -63,11 +73,10 @@ export class BarChartComponent implements OnInit {
 
     return chartData;
 
+  }//end getChartData
 
 
-  }
-
-}
+}//end class
 
 
 
